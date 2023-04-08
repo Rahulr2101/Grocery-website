@@ -1,0 +1,27 @@
+
+.nav{
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    color: rgb(0, 0, 0) ;
+    text-decoration: none;
+    background: none;
+    border: 0;
+    height: 19px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.sign_in{
+
+    width: 100px;
+    height: 46px;
+
+
+background: #5D973A;
+border-radius: 10px;
+}
+
+.sign{
+    color: white;
+    font-weight: 500;
+}

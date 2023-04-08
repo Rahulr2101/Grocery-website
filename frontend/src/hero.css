@@ -1,0 +1,71 @@
+.Bring {
+    position: absolute;
+    width: 347px;
+    height: 58px;
+    left: 240px;
+    top: 201px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 58px;
+    color: #000000;
+}
+.to {
+    position: absolute;
+    width: 189px;
+    height: 58px;
+    left: 238px;
+    top: 263px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 58px;
+    color: #000000;
+}
+
+.Door {
+    position: absolute;
+    width: 153px;
+    height: 77px;
+    left: 438px;
+    top: 255px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 77px;
+    color: #E73F68;
+}
+.hero1 {
+    position: relative;
+    width: 901px;
+    height: 856px;
+    left: 940px;
+    top: -46px;
+}
+.Happyimg {
+    position: absolute;
+    width: 285px;
+    height: 40.91px;
+    left: 258px;
+    top: 669px;
+}
+
+.play {
+    position: absolute;
+    width: 447px;
+    height: 91px;
+    left: 196px;
+    top: 796px;
+}
+.Shop {
+    position: absolute;
+    width: 149px;
+    height: 56px;
+    left: 306px;
+    top: 487px;
+    background: #FFF500;
+    border-radius: 16px;
+}
