@@ -5,14 +5,15 @@ import Frame from './assests/Frame.png'
 import cart from './assests/cart.png'
 
 import './Navbar.css'
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-    <a class="navbar-brand" href="#">
+      <Link to = '/home'><a class="navbar-brand" href="#">
       <img src={Frame} alt="" width="54" height="48" class="d-inline-block align-text-top"></img>
-     </a>
+     </a></Link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

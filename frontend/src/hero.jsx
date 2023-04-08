@@ -4,6 +4,7 @@ import './hero.css';
 import hero_img from './assests/hero_img.png';
 import Happycu from './assests/Happy.png'
 import play from './assests/play.png'
+import Navbar from './Navbar'
 
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -11,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 const Hero = () =>{
   return(
     <>
+    <Navbar/>
     <div className='sen'><span className='Bring'>Bring the store</span><br></br>
     <span   className='to'>to your</span>
     <span className='Door'>Door</span>
