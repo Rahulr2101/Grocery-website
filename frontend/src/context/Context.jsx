@@ -8,8 +8,9 @@ const Cart = createContext();
 const Context = ({ children }) => {
   const products = [...Array(20)].map(() => ({
             id: 1,
-            name: "pineapple" ,
+            name: "Pineapple" ,
             price: "50" ,
+            weight: "1 pc (Approx 1 - 1.5kg)",
             image: pine,
             instock: 7 ,
             fastDelivery: true ,
