@@ -11,14 +11,15 @@ const SingleProduct = ({prod}) => {
       <Card.Body>
         <Card.Title>{prod.name}<span>₹ {prod.price.split(".")[0]}</span></Card.Title>
         <Card.Subtitle style={{ paddingBottom: 10 }}>
-        <span>{prod.weight}</span>  
+        <span>{prod.weight}</span><br/><br/>
           {prod.fastDelivery ? (
             <div>Fast Delivery</div>
           ) : (
             <div>4 days delivery</div>
-          )}
-          <Rating rating={prod.ratings} />
+          )}<br/>
+          <Rating rating={prod.ratings} /><br/><br/>
         </Card.Subtitle>
+        <div><button className="dec">-</button> count <button className="inc">+</button></div>
         </Card.Body>
         </Card>
     </div>

@@ -1,4 +1,4 @@
-#!/home/rahul/git/webapp/webapp/web/bin/python3
+#!/home/rahul/git/Grocery-website/web/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

@@ -7,3 +7,22 @@
   .card-title span:last-child {
     margin-left: auto;
   }
+
+  .inc{
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+    background-color: rgb(252, 83, 98);
+    color: white;
+    font-weight:bolder;
+
+  }
+  .dec{
+    background-color: rgb(252, 83, 98);
+      width: 40px;
+      height: 40px;
+      border-radius: 15px;
+      color: white;
+      font-weight:bolder;
+
+  }

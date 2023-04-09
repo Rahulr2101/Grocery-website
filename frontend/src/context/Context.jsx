@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react"
-import pine from '../fruits/1.jpeg'
+import pine from '../fruits/2.jpeg'
 import { cartReducer } from "./Reducers";
 
 const Cart = createContext();
