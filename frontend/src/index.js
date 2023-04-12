@@ -4,7 +4,6 @@ import App from './App';
 import './index.css';
 import Context from "./context/Context"
 ReactDOM.render(
-  <Context>
-  <App /></Context>,
+  <App />,
   document.getElementById('root')
 );

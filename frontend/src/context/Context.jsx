@@ -1,32 +1,22 @@
-import { createContext, useContext, useReducer } from "react"
-import pine from '../fruits/2.jpeg'
-import { cartReducer } from "./Reducers";
+// ProductList.js
+import React, { useState, useEffect } from 'react';
+import Home from '../home'
 
-const Cart = createContext();
+function ProductList() {
+  const [products, setProducts] = useState([]);
 
+  useEffect(() => {
+    fetch('http://127.0.0.1:8000/products/')
+      .then(response => response.json())
+      .then(data => setProducts(data));
+  }, []);
 
-const Context = ({ children }) => {
-  const products = [...Array(20)].map(() => ({
-            id: 1,
-            name: "Pineapple" ,
-            price: "50" ,
-            weight: "1 pc (Approx 1 - 1.5kg)",
-            image: pine,
-            instock: 7 ,
-            fastDelivery: true ,
-            ratings: 3,
-  }));
-
-  const [state, dispatch] = useReducer(cartReducer, {
-    products: products,
-    cart: [],
-  });
-    return <Cart.Provider value={{state, dispatch}}>{children}</Cart.Provider>
+  return (
+   <Home products={products}></Home>
+  );
 }
 
-export default Context;
+export default ProductList;
 
 
-export const CartState =  () => {
-    return useContext(Cart);
-}
+

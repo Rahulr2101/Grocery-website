@@ -1,21 +1,21 @@
+// Home.js
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbarhome from './navbarshop'
-import { CartState } from './context/Context';
 import SingleProduct from './SingleProduct';
 import './products.css'
 
-const Home = () => {
-  const { state: { products } } = CartState();
-
+const Home = ({ products }) => {
+  console.log(products)
   return (
     <>
       <Navbarhome />
       <div className="productsContainer">
-        {products.map((prod) => {
-         return <SingleProduct prod ={prod} key ={prod.id}/>;
-})}
+        {products.map(product => (
+            <SingleProduct prod={product} />
+
+        ))}
       </div>
     </>
   );
