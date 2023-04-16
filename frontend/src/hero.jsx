@@ -6,7 +6,7 @@ import Happycu from './assests/Happy.png'
 import play from './assests/play.png'
 import Navbar from './Navbar'
 
-
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const Hero = () =>{
@@ -16,7 +16,7 @@ const Hero = () =>{
     <div className='sen'><span className='Bring'>Bring the store</span><br></br>
     <span   className='to'>to your</span>
     <span className='Door'>Door</span>
-    <button className='Shop'>Shop now</button></div>
+    <Link to = '/home '><button className='Shop'>Shop now</button></Link></div>
     <div className='heroimg'>
         <img src= {hero_img} className='hero1'></img>
     </div>
