@@ -10,10 +10,12 @@ import Context from './context/Context';
 import Navbar from './navbarshop'
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
+import Dairy from './Dairy';
 import Hero from './hero';
 import Veg from './vegtable'
 import Snacks from './Snacks'
-
+import Meat from './Meats'
+import Meats from './Meats';
 function App(){
   const [ products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -31,13 +33,7 @@ function App(){
   }, []);
 
 
-  function SnacksFilterChange() {
-    console.log("works")
-    const filtered = products.filter(item => item.category === 'Snacks');
-    setFilteredProducts(filtered);
-  }
 
-console.log(filteredProducts)
   return(
     <>
      <div>
@@ -48,6 +44,8 @@ console.log(filteredProducts)
       <Route exact path='/' element={<Hero />} />
       <Route path='/Snacks' element={<Snacks products={products}/>}/>
     <Route path ='/Veg' element={<Veg products={products}/>}/>
+      <Route path ='/Dairy' element={<Dairy products={products}/>}/>
+    <Route path ='/Meat' element={<Meat products={products}/>}/>
       <Route path='/home' element={<Home products={products}/>}/>
       <Route path='/signup' element={<Signup/>}/>
       </Routes>

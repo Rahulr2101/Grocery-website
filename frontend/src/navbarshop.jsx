@@ -54,7 +54,7 @@ function Navbar(props) {
                 </a>
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item"><Link to = '/Meat'>
               <a className="nav" href="#">
                 <img
                   src={Meat}
@@ -64,9 +64,9 @@ function Navbar(props) {
                   className="Meats"
                 ></img>
                 Meat
-              </a>
+              </a></Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item"><Link to = '/Dairy'>
               <a className="nav" href="#">
                 <img
                   src={Milk}
@@ -76,7 +76,7 @@ function Navbar(props) {
                   className="Diary"
                 ></img>
                 Dairy
-              </a>
+              </a></Link>
             </li>
             <li className="nav-item"><Link to = '/Snacks'>
               <a className="nav" href="#">
