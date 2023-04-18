@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 // import Navbar from "./Navbar"
@@ -7,23 +7,53 @@ import Home from './home';
 import {AuthProvider} from './context/AuthContext'
 import Signup from './signup';
 import Context from './context/Context';
+import Navbar from './navbarshop'
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
 import Hero from './hero';
+import Veg from './vegtable'
+import Snacks from './Snacks'
 
 function App(){
+  const [ products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+
+
+
+  useEffect(() => {
+    console.log("fetch")
+    fetch('http://127.0.0.1:8000/products/')
+      .then(response => response.json())
+      .then(data => {
+        setProducts(data); 
+      });
+  }, []);
+
+
+  function SnacksFilterChange() {
+    console.log("works")
+    const filtered = products.filter(item => item.category === 'Snacks');
+    setFilteredProducts(filtered);
+  }
+
+console.log(filteredProducts)
   return(
     <>
+     <div>
   
     <BrowserRouter>
     <AuthProvider>
     <Routes>
       <Route exact path='/' element={<Hero />} />
-      <Route path='/home' element={<Context/>}/>
+      <Route path='/Snacks' element={<Snacks products={products}/>}/>
+    <Route path ='/Veg' element={<Veg products={products}/>}/>
+      <Route path='/home' element={<Home products={products}/>}/>
       <Route path='/signup' element={<Signup/>}/>
       </Routes>
       </AuthProvider>
         </BrowserRouter>
+        </div>
     
     </>
   )

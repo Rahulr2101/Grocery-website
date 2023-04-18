@@ -7,13 +7,13 @@ import SingleProduct from './SingleProduct';
 import './products.css'
 
 const Home = ({ products }) => {
-  // console.log(products)
+  console.log(products)
   return (
     <>
-     
+     <Navbarhome />
       <div className="productsContainer">
         {products.map(product => (
-            <SingleProduct prod={product} />
+            <SingleProduct key = {product.id} prod={product} />
 
         ))}
       </div>

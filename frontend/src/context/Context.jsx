@@ -1,17 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import Home from '../home';
-import Navbar from '../navbarshop';
+import { createContext, useContext, useReducer } from "react"
+import pine from '../fruits/1.jpeg'
+import { cartReducer } from "./Reducers";
 
-function ProductList() {
+import Navbar from '../navbarshop';
+import Home from '../home'
+
+const Cart = createContext();
+
+function Context({ children }) { // add children argument
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
+    console.log("fetch")
     fetch('http://127.0.0.1:8000/products/')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
       .then(data => {
         setProducts(data);
         setFilteredProducts(data); 
+      })
+      .catch(error => {
+        console.error('Error fetching products:', error);
       });
   }, []);
 
@@ -33,13 +48,20 @@ function ProductList() {
     setFilteredProducts(filtered);
   }
 
-  return (
-    <div>
-      <Navbar handleFilterSnacks={SnacksFilterChange} handleFilterVeg = {VegFilterChange} />
+  const [state, dispatch] = useReducer(cartReducer, {
+    products: products,
+    cart: [],
+  });
 
-      <Home products={filteredProducts} />
-    </div>
-  );
+  return (
+    <Cart.Provider value={{ state, dispatch }}>
+      {children} {/* add children prop */}
+    </Cart.Provider>
+  )
 }
 
-export default ProductList;
+export default Context;
+
+export const CartState = () => {
+  return useContext(Cart);
+}
