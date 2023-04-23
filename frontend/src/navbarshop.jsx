@@ -11,10 +11,14 @@ import Cart2 from "./assests/cart2.png";
 import "./App";
 
 import "./navbarshop.css";
-import { Button } from "react-bootstrap";
+import { Button, ToastContainer } from "react-bootstrap";
 import { Link, Router } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 
 function Navbar(props) {
+  const productData = useSelector((state)=>state.bazar.productData);
+  console.log(productData)
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
@@ -97,11 +101,12 @@ function Navbar(props) {
             </li>
             <li>
               <a className="nav">
-                <img src={Cart2} alt="Cart"></img>
+                <img src={Cart2} alt="Cart"></img>{productData.length}
               </a>
             </li>
           </ul>
         </div>
+       
       </div>
     </nav>
   );

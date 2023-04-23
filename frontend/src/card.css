@@ -26,3 +26,21 @@
       font-weight:bolder;
 
   }
+  .cartbu{
+    text-align: end;
+  }
+  .increa{
+    position: relative;
+    left: -35px;
+  }
+  .cartel{
+    position: relative;
+    right: -78px;
+  
+  }
+  .cartbut{
+    background-color: rgb(129, 209, 240);
+    width: 60px;
+      height: 50px;
+    border-radius: 15px;
+  }
