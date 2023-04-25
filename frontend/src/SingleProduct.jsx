@@ -32,6 +32,7 @@ const SingleProduct = ({prod}) => {
             <button onClick={()=>setBaseQty(baseQty + 1 )} className="inc">+</button></ul>
             <ul class="cartel"><button onClick={()=>dispatch(addToCart({
               _id: prod.id,
+              img:prod.image, 
               title: prod.name,
               price:prod.price,
               quantity: baseQty,

@@ -16,12 +16,42 @@ export const bazarSlice = createSlice({
             }else{
             state.productData.push(action.payload);
         }
+    },
+    increamentQuantity:(state,action)=>{
+        const item = state.productData.find(
+            (item) => item._id ===action.payload._id
+        );
+        if(item){
+            item.quantity++;
+        }
+    },
+    deleteItem:(state,action) => {
+        state.productData = state.productData.filter(
+            (item) => item._id !== action.payload
+        );
+    },
+    resetCart:(state) => {
+        state.productData = [];
+    },
+    decrementQuantity:(state,action)=>{
+        const item = state.productData.find(
+            (item) => item._id == action.payload._id
+        );
+        if(item.quantity===1){
+            item.quantity = 1
+        }else{
+            item.quantity--;
+        }
     }
     }
 });
 
 
 export const{
-    addToCart
+    addToCart,
+    deleteItem,
+    resetCart,
+    increamentQuantity,
+    decrementQuantity
 } =  bazarSlice.actions;
-export default bazarSlice.reducer
+export default bazarSlice.reducer;

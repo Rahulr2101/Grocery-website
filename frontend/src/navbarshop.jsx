@@ -100,9 +100,9 @@ function Navbar(props) {
               </a>
             </li>
             <li>
-              <a className="nav">
-                <img src={Cart2} alt="Cart"></img>{productData.length}
-              </a>
+            <Link to = '/cart'> <a className="nav" href="#">
+              <img src={Cart2} alt="Cart"></img>{productData.length}
+              </a> </Link>
             </li>
           </ul>
         </div>
