@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import CartItem from "./Cartitem";
 import { ToastContainer,toast } from "react-toastify";
 import StripeCheckout from "react-stripe-checkout";
+import Navbar from './Navbar'
 
 const Cart = () => {
     const productData = useSelector((state)=> state.bazar.productData);
@@ -26,7 +27,11 @@ const Cart = () => {
             toast.error("Please sign in to Checkout")
         }
     };
-    return (<div>
+    return (
+        <>
+         <Navbar/>
+    <div>
+       
                 <img className="w-full h-60 object-cover" src="https://images.pexels.com/photos/1435752/pexels-photo-1435752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="cartImg"/>
 
     <div className="max-w-screen-x1 mx-auto py-20 flex">
@@ -77,7 +82,8 @@ const Cart = () => {
         theme="dark"
         
         />
-    </div>)
+    </div>
+    </>)
 
 };
 

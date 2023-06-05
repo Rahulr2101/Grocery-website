@@ -7,35 +7,24 @@ import cart from './assests/cart.png'
 import './Navbar.css'
 import { Link } from 'react-router-dom';
 
-function Navbar() {
-  return (
-    <nav className="navbar navbar-expand-lg">
-      <div className="container-fluid">
-      <Link to = '/home'><a class="navbar-brand" href="#">
-      <img src={Frame} alt="" width="54" height="48" class="d-inline-block align-text-top"></img>
-     </a></Link>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-nav ms-auto justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Categories</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-        <a className='nav'><img src={cart} alt="Frame" ></img></a>
-        <a className='nav'><button class='sign_in'><a className="sign">Sign in</a></button></a>
+
+const Navbar = () =>{
+  return <div className='w-full h-20 '>
+    <div className='max-w-screen-x1 h-full mx-auto flex items-center justify-between' >
+      <div>
+      <img className='w-18' src={Frame} alt='logo'/>
+    </div>
+    <div >
+      <ul className='flex items-center gap-10'>
+        <li className='text-base text-black font-bold hover:text-red-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Home</li>
+        <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Shop</li>
+        <li className='text-base text-black font-bold hover:text-orange-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300'>Categories</li>
+        <li className='text-base text-black font-bold hover:text-red-900 hover:underline underline-offset-2 decoration-[1px] cursor-pointer duration-300' >Contact</li>
       </ul>
     </div>
     </div>
-  
-    </nav>
-  );
+    
+  </div>
 }
 
 export default Navbar;
