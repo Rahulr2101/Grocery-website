@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import CartItem from "./Cartitem";
-import { ToastContainer,toast } from "react-bootstrap";
+import { ToastContainer,toast } from "react-toastify";
+import StripeCheckout from "react-stripe-checkout";
 
 const Cart = () => {
     const productData = useSelector((state)=> state.bazar.productData);
+    const userInfo =useSelector((state)=>state.bazar.userInfo)
     const[totalAmt,setTotalAmt] = useState("");
+    const [payNow,setPayNow] =useState(false)
     useEffect(()=>{
         let price = 0;
         productData.map((item)=>{
@@ -16,6 +19,13 @@ const Cart = () => {
        
     },[productData])
     console.log(productData);
+    const handleCheckout =()=>{
+        if(userInfo){
+            setPayNow(true)
+        }else{
+            toast.error("Please sign in to Checkout")
+        }
+    };
     return (<div>
                 <img className="w-full h-60 object-cover" src="https://images.pexels.com/photos/1435752/pexels-photo-1435752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="cartImg"/>
 
@@ -42,7 +52,17 @@ const Cart = () => {
                 Total<span className="text-x1 font-bold"> 
 ₹{totalAmt}</span>
             </p>
-            <button className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300">proceed to checkout</button>
+            <button onClick={handleCheckout} className="text-base bg-black text-white w-full py-3 mt-6 hover:bg-gray-800 duration-300">proceed to checkout</button>
+            {payNow &&<div className="w-full mt-6 flex items-center justify-center">
+                <StripeCheckout
+                stripeKey="pk_test_51NFWVKSEKBh3Jd4tTvxxqQzjb9G32yqSFeFPP7qPDB20S7UDS1buBWr9aYmlLCdlhc0JTNUWIbEIDVluEflwXJ3u00AfzQbfsw"
+                name="FreshCart"
+                amount={totalAmt*100}
+                label="Pay to bazar"
+                description={`Your Payment amount is ₹${totalAmt}`}
+                // token = {payment}
+                email  = {userInfo.email}></StripeCheckout>
+                </div>}
         </div>
     </div>
     <ToastContainer

@@ -17,6 +17,7 @@ import Snacks from './Snacks'
 import Meat from './Meats'
 import Meats from './Meats';
 import Cart from './cart'
+import Login from './login';
 function App(){
   const [ products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -50,6 +51,7 @@ function App(){
       <Route path='/home' element={<Home products={products}/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path="/cart" element={<Cart/>}/>
+      <Route path="/login" element={<Login/>}/>
       </Routes>
       </AuthProvider>
         </BrowserRouter>

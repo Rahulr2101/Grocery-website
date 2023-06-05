@@ -30,7 +30,7 @@ const CartItem = () => {
               />
               <img
                 className="w-32 h-32 object-cover"
-                src={item.img}
+                src={item.image}
                 alt="productImg"
               />
             </div>
@@ -45,7 +45,7 @@ const CartItem = () => {
                       decrementQuantity({
                         _id: item._id,
                         title: item.title,
-                        image: item.img,
+                        image: item.image,
                         price: item.price,
                         quantity: 1,
                       })
