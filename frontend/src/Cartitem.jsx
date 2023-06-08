@@ -8,7 +8,7 @@ import { Link, Router } from "react-router-dom";
 const CartItem = () => {
   const dispatch = useDispatch();
   const productData = useSelector((state) => state.bazar.productData);
-
+  
   return (
     <div className="w-2/3 pr-10">
       <div className="w-full">

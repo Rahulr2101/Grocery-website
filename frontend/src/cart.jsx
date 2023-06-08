@@ -63,7 +63,8 @@ const Cart = () => {
                 stripeKey="pk_test_51NFWVKSEKBh3Jd4tTvxxqQzjb9G32yqSFeFPP7qPDB20S7UDS1buBWr9aYmlLCdlhc0JTNUWIbEIDVluEflwXJ3u00AfzQbfsw"
                 name="FreshCart"
                 amount={totalAmt*100}
-                label="Pay to bazar"
+                label="Pay to FreshCart"
+                currency= 'inr'
                 description={`Your Payment amount is ₹${totalAmt}`}
                 // token = {payment}
                 email  = {userInfo.email}></StripeCheckout>

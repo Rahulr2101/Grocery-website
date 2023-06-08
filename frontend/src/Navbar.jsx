@@ -3,12 +3,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Frame from './assests/Frame.png'
 import cart from './assests/cart.png'
+import profile from './assests/profile.jpg'
 
 import './Navbar.css'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 const Navbar = () =>{
+  const userInfo = useSelector((state) => state.bazar.userInfo);
+  console.log(userInfo)
   return <div className='w-full h-20 '>
     <div className='max-w-screen-x1 h-full mx-auto flex items-center justify-between' >
       <div>
@@ -25,7 +29,11 @@ const Navbar = () =>{
       <img className="w-10"src={cart} alt="cartImg"/>
       <span className='absolute w-10 top-4 left-0 text-sm flex items-center justify-center font-titlefont'>0</span>
       </div>
-      <img src='' alt=''/>
+      <Link to ="/login">
+      <img class='w-10 h-10 rounded-full' src={ userInfo ? userInfo.image: profile} alt='userlogo'/>
+      </Link>
+      {userInfo && <p>{userInfo.name}</p>}
+      <br></br>
     </div>
     </div>
     
