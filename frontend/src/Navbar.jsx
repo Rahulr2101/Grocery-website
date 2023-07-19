@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux';
 
 const Navbar = () =>{
   const userInfo = useSelector((state) => state.bazar.userInfo);
+  const productData = useSelector((state)=>state.bazar.productData);
   console.log(userInfo)
   return <div className='w-full h-20 '>
     <div className='max-w-screen-x1 h-full mx-auto flex items-center justify-between' >
@@ -27,10 +28,10 @@ const Navbar = () =>{
       </ul>
       <div className='relative'>
       <img className="w-10"src={cart} alt="cartImg"/>
-      <span className='absolute w-10 top-4 left-0 text-sm flex items-center justify-center font-titlefont'>0</span>
+      <span className='absolute w-10 top-4 left-0 text-sm flex items-center justify-center font-titlefont'>{productData.length}</span>
       </div>
       <Link to ="/login">
-      <img class='w-10 h-10 rounded-full' src={ userInfo ? userInfo.image: profile} alt='userlogo'/>
+      <img class='w-10 h-10 rounded-full' src={ userInfo ? userInfo.image: profile} alt='userlogo' referrerpolicy="no-referrer"/>
       </Link>
       {userInfo && <p>{userInfo.name}</p>}
       <br></br>
